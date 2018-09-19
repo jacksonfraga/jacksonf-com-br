@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+  - 8.5.0
+script:
+  - "npm run lint"
+  - "npm run test"
+
+# blocklist
+branches:
+  except:
+  - legacy
+  - experimental
+
+# safelist
+branches:
+  only:
+  - master
+  - stable
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: 3523d942-4583-45e2-955b-8dfc42c16fc7
+  app: jacksonf
+  on:
+    repo: jacksonfraga/jacksonf-com-br
