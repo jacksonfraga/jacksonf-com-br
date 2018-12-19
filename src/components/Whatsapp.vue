@@ -3,6 +3,7 @@
     <h2>{{ msg }}</h2>
     <input v-model="fone" placeholder="+5551999998888">
     <a v-bind:href="url">Send Message</a>
+    <a v-bind:href="url2">Send Message</a>
   </div>
 </template>
 
@@ -18,7 +19,10 @@ export default {
   },
   computed: {
     url () {
-      return 'whatsapp://send?abid=' + this.fone + '&text=Olá!'
+      return 'whatsapp://send?phone=' + this.fone + '&text=Olá!'
+    },
+    url2 () {
+      return 'https://wa.me/' + this.fone + '/?text=Olá!'
     }
   }
 }
